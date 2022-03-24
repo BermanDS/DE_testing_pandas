@@ -12,4 +12,9 @@ Check you have python3 installed:
 python3 --version
 ```
 
+Generate data:
+```bash
+python generate_data/generator.py
+```
+
 Test task for pandas using

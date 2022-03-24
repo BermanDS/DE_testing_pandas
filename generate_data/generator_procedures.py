@@ -7,6 +7,8 @@ from datetime import timedelta
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import numpy as np
+import glob
+import pandas.io.parsers
 
 
 class Customer(object):
@@ -136,3 +138,13 @@ def generate_basket(products, product_id_lookup, cats):
         })
     
     return basket
+
+
+def read_csv(csv_location: str):
+    return pandas.read_csv(csv_location, header=0)
+
+
+def read_json_folder(json_folder: str):
+    transactions_files = glob.glob("{}*/*.json".format(json_folder))
+
+    return pandas.concat(pandas.read_json(tf, lines=True) for tf in transactions_files)
