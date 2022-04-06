@@ -5,7 +5,7 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import numpy as np
 
-from .generator_procedures import *
+from generator_procedures import *
 
 gen_id = "starter"
 output_location = os.path.join('input_data', gen_id)
